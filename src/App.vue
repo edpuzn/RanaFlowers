@@ -47,7 +47,7 @@
           </div>
           <div class="footer-social">
             <a class="whatsapp" href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            <a class="instagram" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="instagram" href="https://instagram.com/ranaflowers21" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
