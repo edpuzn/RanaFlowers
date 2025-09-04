@@ -91,6 +91,8 @@ export default defineComponent({
 <style scoped>
 .playfair { font-family: 'Playfair Display', 'Cormorant Garamond', serif; }
 .letter-space-2 { letter-spacing: 2px; }
+
+
 .italic { font-style: italic; }
 .fade-slide {
   opacity: 0;

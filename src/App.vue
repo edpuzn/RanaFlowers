@@ -37,7 +37,54 @@
     </main>
 
     <footer class="footer">
-      <p>© {{ new Date().getFullYear() }} Rana Flowers. Tüm hakları saklıdır.</p>
+      <div class="footer-wrap">
+        <div class="footer-col">
+          <div class="footer-title"><i class="bi bi-headset"></i> Çağrı Merkezi</div>
+          <a class="footer-phone" href="tel:+905536026121">0553 602 61 21</a>
+          <div class="footer-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Fırat Mah. Fırat Blv. No:43 A, Kayapınar / Diyarbakır</span>
+          </div>
+          <div class="footer-social">
+            <a class="whatsapp" href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a class="instagram" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</div>
+          <ul>
+            <li><router-link to="/urunler">Buketler</router-link></li>
+            <li><router-link to="/urunler">Orkideler</router-link></li>
+            <li><router-link to="/urunler">Hediyelikler</router-link></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title"><i class="bi bi-info-circle"></i> Bilgilendirme</div>
+          <ul>
+            <li><router-link to="/iletisim">İletişim</router-link></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Kullanım Koşulları</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title"><i class="bi bi-credit-card"></i> Ödeme</div>
+          <div class="cards">
+            <span class="pay" aria-label="VISA logo">
+              <img src="/brands/visa.svg" alt="Visa" />
+            </span>
+            <span class="pay" aria-label="Mastercard logo">
+              <img src="/brands/mastercard.svg" alt="Mastercard" />
+            </span>
+            <span class="pay" aria-label="TROY logo">
+              <img src="/brands/troy.svg" alt="Troy" />
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© {{ new Date().getFullYear() }} Rana Flowers • Diyarbakır</div>
     </footer>
   </div>
   
@@ -160,10 +207,30 @@ export default defineComponent({
 html { scrollbar-gutter: stable both-edges; }
 
 .footer {
-  padding: 24px;
-  text-align: center;
-  color: #666;
+  padding: 32px 24px 16px;
+  color: #333;
   border-top: 1px solid #eee;
-  background: #fff;
+  background: linear-gradient(180deg, #ffffff, #f7f6f4);
 }
+
+.footer-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.footer-col { background:#fff; border:1px solid #eee; border-radius:14px; padding:14px; }
+.footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.footer-phone { display:inline-block; font-weight:800; font-size:20px; color:#111; text-decoration:none; }
+.footer-item { display:flex; gap:8px; color:#555; margin-top:8px; }
+.footer-social { display:flex; gap:12px; margin-top:10px; }
+.footer-social a { width:38px; height:38px; border:1px solid #bbb; border-radius:10px; background:#fff; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+.footer-social a:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,.08); }
+.footer-col ul { list-style:none; padding-left:0; margin:0; }
+.footer-col li { margin:6px 0; }
+.footer-col a { text-decoration:none; color:#333; }
+.cards { display:flex; flex-wrap:wrap; gap:8px; }
+.pay { width:92px; height:40px; border:1px solid #ddd; border-radius:8px; display:flex; align-items:center; justify-content:center; background:#fff; }
+.pay img { max-width:72px; max-height:24px; }
+.footer-bottom { text-align:center; color:#666; margin-top:12px; font-size:12px; }
 </style>
