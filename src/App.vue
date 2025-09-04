@@ -17,8 +17,7 @@
   <div id="layout">
     <header class="navbar" style="--brand:#222; --primary:#222; --soft:#f6efe9; --accent:#e7f0ec; --muted:#666; --white:#fff;">
       <div class="brand">
-        <img class="logo" src="/logo.png" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
-        <div class="logo-circle" style="display:none">RF</div>
+        <div class="logo-circle">RF</div>
         <div class="brand-text">
           <span class="brand-title">RANA</span>
           <span class="brand-sub">FLOWERS</span>
@@ -123,7 +122,6 @@ export default defineComponent({
   gap: 12px;
 }
 
-.logo { width: 40px; height: 40px; object-fit: contain; }
 .logo-circle {
   width: 36px;
   height: 36px;
@@ -134,6 +132,7 @@ export default defineComponent({
   justify-content: center;
   font-weight: 700;
   letter-spacing: 1px;
+  background: radial-gradient(80% 80% at 30% 20%, #ffffff, #f6efe9);
 }
 
 .brand-text { line-height: 1; }
