@@ -109,11 +109,11 @@ export default defineComponent({
         name: 'Saksı Çiçekleri',
         cover: '/saksicicekleri.jpg',
         items: [
-          'https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1446071103084-c257b5f70672?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1466840869381-8fbad262afa9?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
+          '/saksiCicekleri/1.JPG',
+          '/saksiCicekleri/2.JPG',
+          '/saksiCicekleri/3.JPG',
+          '/saksiCicekleri/4.JPG',
+          '/saksiCicekleri/5.JPG',
         ]
       },
       {
@@ -121,11 +121,11 @@ export default defineComponent({
         name: 'Açılış Çiçekleri',
         cover: '/aciliscicekleri.jpg',
         items: [
-          'https://images.unsplash.com/photo-1576085898323-218337e3e43c?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1556227701-fbf3d05f33fa?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1000&auto=format&fit=crop',
+          '/acilisCicekleri/IMG_4365.JPG',
+          '/acilisCicekleri/IMG_4366.JPG',
+          '/acilisCicekleri/IMG_4369.JPG',
+          '/acilisCicekleri/IMG_4370.JPG',
+          '/acilisCicekleri/IMG_4371.JPG',
         ]
       },
       {
@@ -133,11 +133,11 @@ export default defineComponent({
         name: 'Çelenkler',
         cover: '/celenk.jpg',
         items: [
-          'https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1589927986089-35812388d1f4?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1520975922217-7b683d8b62a0?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
+          '/celenkler/1.JPG',
+          '/celenkler/2.JPG',
+          '/celenkler/3.JPG',
+          '/celenkler/4.JPG',
+          '/celenkler/5.JPG',
         ]
       },
       {
@@ -157,11 +157,11 @@ export default defineComponent({
         name: 'Papatyalar',
         cover: '/papatya.jpg',
         items: [
-          'https://images.unsplash.com/photo-1436891620584-47fd0e565afb?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
+          '/papatyalar/1.JPG',
+          '/papatyalar/2.JPG',
+          '/papatyalar/3.JPG',
+          '/papatyalar/1.JPG',
+          '/papatyalar/2.JPG',
         ]
       },
       {
@@ -195,11 +195,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.ratio { border-top-left-radius: .5rem; border-top-right-radius: .5rem; }
-.banner { height: 220px; background: #eee center/cover no-repeat; position: relative; overflow: hidden; }
+.ratio { border-top-left-radius: .5rem; border-top-right-radius: .5rem; background-position: 50% 35% !important; }
+.banner { height: 240px; background: #eee center/cover no-repeat; background-position: 50% 35%; position: relative; overflow: hidden; }
 .banner::after { content:""; position:absolute; inset:0; background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.05)); }
 .banner-overlay { position:absolute; left:16px; bottom:12px; color:#fff; z-index:1; }
-.banner-fig { position:absolute; top:50%; transform: translateY(-50%) rotate(-6deg); width: 160px; height: 120px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.7); }
+.banner-fig { position:absolute; top:50%; transform: translateY(-50%) rotate(-4deg); width: 150px; height: 110px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.2); border: 2px solid rgba(255,255,255,.7); }
 .banner-fig.right { right: 12px; transform: translateY(-50%) rotate(6deg); }
 .banner-fig.left { left: 12px; }
 .nav-pills .nav-link { border:1px solid #111; color:#111; background:#fff; }
