@@ -145,11 +145,11 @@ export default defineComponent({
         name: 'Buketler',
         cover: '/buket.jpg',
         items: [
-          '/buketler/1.JPG',
-          '/buketler/1.JPG',
-          '/buketler/1.JPG',
-          '/buketler/1.JPG',
-          '/buketler/1.JPG',
+          '/buketler/1.jpeg',
+          '/buketler/2.jpeg',
+          '/buketler/3.jpeg',
+          '/buketler/4.jpeg',
+          '/buketler/5.jpeg',
         ]
       },
       {
