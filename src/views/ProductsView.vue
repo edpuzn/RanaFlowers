@@ -12,6 +12,8 @@
     </ul>
 
     <div v-if="current" class="banner mb-3 rounded-3" :style="{ backgroundImage: `url(${current.cover})` }">
+      <img v-if="bannerLeft" :src="bannerLeft" alt="" class="banner-fig left" />
+      <img v-if="bannerRight" :src="bannerRight" alt="" class="banner-fig right" />
       <div class="banner-overlay">
         <h3 class="h4 m-0">{{ current.name }}</h3>
         <span class="small">Seçkiden örnekler</span>
@@ -21,12 +23,45 @@
     <div class="row g-3">
       <article v-for="(img,idx) in (current?.items || [])" :key="idx" class="col-6 col-md-4 col-lg-3">
         <div class="card h-100 shadow-sm">
-          <div class="ratio ratio-4x3" :style="{ background: `url(${img}) center/cover no-repeat` }"></div>
+          <a href="#" class="preview" data-bs-toggle="modal" data-bs-target="#imgModal" @click.prevent="openPreview(idx)">
+            <div class="ratio ratio-4x3" :style="{ background: `url(${img}) center/cover no-repeat` }"></div>
+          </a>
           <div class="card-body py-2">
-            <h3 class="h6 m-0">{{ current?.name }}</h3>
+            <div class="card-meta">
+              <span class="pill">{{ current?.name }}</span>
+              <span class="muted">Örnek {{ idx + 1 }}</span>
+            </div>
           </div>
         </div>
       </article>
+    </div>
+
+    <div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark border-0">
+          <button type="button" class="btn-close btn-close-white ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div id="galleryCarousel" class="carousel slide" data-bs-interval="false">
+            <div class="carousel-inner">
+              <div v-for="(img, i) in (current?.items || [])" :key="i" class="carousel-item" :class="{ active: i === selectedIndex }">
+                <div class="zoom-wrap">
+                  <img :src="img" class="d-block w-100 rounded-3" alt="Görsel" />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Önceki</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Sonraki</span>
+            </button>
+          </div>
+          <div class="caption text-center text-white-50 py-2">
+            {{ current?.name }} • {{ selectedIndex + 1 }}/{{ current?.items.length || 0 }}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -48,13 +83,13 @@ export default defineComponent({
       {
         id: 'guller',
         name: 'Güller',
-        cover: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop',
+        cover: '/guller/1.jpg',
         items: [
-          'https://images.unsplash.com/photo-1470137430626-983a37b8ea46?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1481241992364-5cabe57bb0a0?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
+          '/guller/1.jpg',
+          '/guller/2.jpg',
+          '/guller/3.jpg',
+          '/guller/4.jpg',
+          '/guller/2.jpg'
         ]
       },
       {
@@ -63,22 +98,22 @@ export default defineComponent({
         cover: 'https://images.unsplash.com/photo-1542259009477-98a5a5a3327b?q=80&w=1200&auto=format&fit=crop',
         items: [
           'https://images.unsplash.com/photo-1542259009477-98a5a5a3327b?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1520975922217-7b683d8b62a0?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1520722350857-1e0e3f8c2f5f?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd2?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1491069755253-1be3c2aaa9e7?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1442458017215-285b83f65851?q=80&w=1000&auto=format&fit=crop',
         ]
       },
       {
         id: 'saksi',
         name: 'Saksı Çiçekleri',
-        cover: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop',
+        cover: 'https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=1600&auto=format&fit=crop',
         items: [
           'https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1446071103084-c257b5f70672?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1466840869381-8fbad262afa9?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
         ]
       },
       {
@@ -86,11 +121,11 @@ export default defineComponent({
         name: 'Açılış Çiçekleri',
         cover: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop',
         items: [
-          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1576085898323-218337e3e43c?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1556227701-fbf3d05f33fa?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1481241992364-5cabe57bb0a0?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1000&auto=format&fit=crop',
         ]
       },
       {
@@ -98,11 +133,11 @@ export default defineComponent({
         name: 'Çelenkler',
         cover: 'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1200&auto=format&fit=crop',
         items: [
-          'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1589927986089-35812388d1f4?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1520975922217-7b683d8b62a0?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1481241992364-5cabe57bb0a0?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1000&auto=format&fit=crop',
         ]
       },
       {
@@ -145,8 +180,16 @@ export default defineComponent({
 
     const selectedId = ref<string>('guller')
     const current = computed(() => categories.value.find(c => c.id === selectedId.value))
+    const bannerLeft = computed(() => current.value ? current.value.items[0] : '')
+    const bannerRight = computed(() => current.value ? current.value.items[1] : '')
 
-    return { categories, selectedId, current }
+    const selectedIndex = ref<number>(0)
+    const selectedImage = ref<string>('')
+    const openPreview = (idx: number) => {
+      selectedIndex.value = idx
+      selectedImage.value = current.value?.items[idx] || ''
+    }
+    return { categories, selectedId, current, selectedImage, selectedIndex, openPreview, bannerLeft, bannerRight }
   }
 })
 </script>
@@ -156,6 +199,21 @@ export default defineComponent({
 .banner { height: 220px; background: #eee center/cover no-repeat; position: relative; overflow: hidden; }
 .banner::after { content:""; position:absolute; inset:0; background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.05)); }
 .banner-overlay { position:absolute; left:16px; bottom:12px; color:#fff; z-index:1; }
+.banner-fig { position:absolute; top:50%; transform: translateY(-50%) rotate(-6deg); width: 160px; height: 120px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.7); }
+.banner-fig.right { right: 12px; transform: translateY(-50%) rotate(6deg); }
+.banner-fig.left { left: 12px; }
+.nav-pills .nav-link { border:1px solid #111; color:#111; background:#fff; }
+.nav-pills .nav-link.active { background:#111; color:#fff; }
+.preview { display:block; }
+.preview .ratio { transition: transform .25s ease; }
+.preview:hover .ratio { transform: scale(1.02); }
+.modal-content { border-radius: 16px; overflow: hidden; }
+.zoom-wrap { overflow: hidden; }
+.zoom-wrap img { transition: transform .35s ease; }
+.zoom-wrap img:hover { transform: scale(1.03); }
+.card-meta { display:flex; align-items:center; justify-content:space-between; }
+.pill { border:1px solid #111; border-radius:999px; padding:2px 8px; font-size:12px; font-weight:700; letter-spacing:.3px; }
+.muted { color:#6c757d; font-size:12px; }
 </style>
 
 
