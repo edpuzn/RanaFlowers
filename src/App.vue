@@ -3,7 +3,7 @@
     <div v-if="showSplash" class="splash">
       <div class="splash-inner">
         <div class="splash-mark">
-          <img class="splash-logo" src="/logo.png" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <img class="splash-logo" :src="logoUrl" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
           <div class="splash-ring" style="display:none">RF</div>
         </div>
         <div class="splash-brand">
@@ -27,7 +27,7 @@
     <header class="navbar" style="--brand:#222; --primary:#222; --soft:#f6efe9; --accent:#e7f0ec; --muted:#666; --white:#fff;">
       <div class="navbar-inner">
         <router-link to="/" class="brand brand-link">
-          <div class="logo-circle">RF</div>
+          <img class="brand-logo" :src="logoUrl" alt="Rana Flowers logo" />
           <div class="brand-text">
             <span class="brand-title">RANA</span>
             <span class="brand-sub">FLOWERS</span>
@@ -112,6 +112,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
+import logoUrl from './assets/logo.png'
 
 export default defineComponent({
   name: 'AppLayout',
@@ -134,7 +135,7 @@ export default defineComponent({
       const sync = (window as any).__footerSync as (() => void) | undefined
       if (sync) window.removeEventListener('resize', sync)
     })
-    return { showSplash }
+    return { showSplash, logoUrl }
   }
 })
 </script>
@@ -237,6 +238,8 @@ html, body { margin: 0; padding: 0; }
   letter-spacing: 1px;
   background: radial-gradient(80% 80% at 30% 20%, #ffffff, #f6efe9);
 }
+
+.brand-logo { width: 32px; height: 32px; object-fit: contain; }
 
 .brand-text { line-height: 1; }
 .brand-title { font-size: 18px; font-weight: 800; letter-spacing: 2px; }
