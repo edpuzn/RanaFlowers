@@ -179,4 +179,22 @@ export default defineComponent({
 /* Özellik kartları - hover efekti */
 .feature-card { transition: transform .25s ease, box-shadow .25s ease; border:1px solid #eee; }
 .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+/* Başlık tipografisi - zarif Playfair ve ince vurgu */
+.feature-card h3 {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: #1f1f1f;
+}
+.feature-card h3::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin: 6px auto 0;
+  background: linear-gradient(90deg, #111, transparent);
+  opacity: .25;
+  transition: width .25s ease, opacity .25s ease;
+}
+.feature-card:hover h3::after { width: 48px; opacity: .4; }
 </style>
