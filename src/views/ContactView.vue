@@ -11,18 +11,29 @@
             <li><i class="bi bi-telephone"></i> <a class="link-dark" href="tel:+905536026121">0553 602 61 21</a></li>
           </ul>
 
+          <div class="social mt-2 text-center">
+            <a class="sbtn whatsapp" href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a class="sbtn instagram" href="https://instagram.com/ranaflowers21" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+
           <div class="d-flex gap-2 justify-content-center mt-2">
             <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Rana+Flowers/@37.9332758,40.1669807,17z/data=!3m1!4b1!4m6!3m5!1s0x40751f9e5e9132d3:0x42ac0fb6e74ff4d1!8m2!3d37.9332758!4d40.1695556!16s%2Fg%2F11mdnjmw66?entry=ttu"><i class="bi bi-sign-turn-right"></i> Yol Tarifi</a>
             <a class="btn btn-outline-dark" href="tel:+905536026121"><i class="bi bi-telephone-outbound"></i> Ara</a>
           </div>
 
           <div class="mt-3">
-            <button class="btn btn-link p-0" data-bs-toggle="collapse" data-bs-target="#hours" aria-expanded="false" aria-controls="hours">
-              <i class="bi bi-clock"></i> Çalışma Saatleri
+            <button class="btn btn-link p-0 hours-toggle" data-bs-toggle="collapse" data-bs-target="#hours" aria-expanded="false" aria-controls="hours">
+              <i class="bi bi-clock"></i> Çalışma Saatleri (Gün Gün)
             </button>
             <div id="hours" class="collapse">
-              <ul class="small text-secondary mb-0">
-                <li>Her gün: 09:00 – 21:00</li>
+              <ul class="hours-list small mb-0">
+                <li><span>Pazartesi</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Salı</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Çarşamba</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Perşembe</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Cuma</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Cumartesi</span><strong>09:00 – 21:00</strong></li>
+                <li><span>Pazar</span><strong>10:00 – 20:00</strong></li>
               </ul>
             </div>
           </div>
@@ -53,6 +64,20 @@ export default defineComponent({ name: 'ContactView' })
 
 .map-full { width: 100%; }
 .map-frame { width: 100%; height: 60vh; min-height: 420px; border: 0; display: block; }
+
+/* Sosyal butonlar - tema ile uyumlu */
+.social { display:flex; justify-content:center; gap:12px; }
+.sbtn { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; border:1px solid #ddd; color:#111; background:#fff; }
+.sbtn:hover { transform: translateY(-1px); }
+.sbtn.whatsapp { color:#128C7E; border-color:#bfe5dd; background:#e7f0ec; }
+.sbtn.instagram { color:#c13584; border-color:#f2c7df; background:#fff0f7; }
+
+/* Çalışma saatleri */
+.hours-toggle { color:#111; }
+.hours-list { list-style:none; padding-left:0; color:#6c757d; }
+.hours-list li { display:flex; align-items:center; justify-content:space-between; padding:6px 10px; border:1px solid #eee; border-radius:8px; margin:6px 0; background:#fff; }
+.hours-list li span { font-weight:600; }
+.hours-list li strong { color:#111; }
 </style>
 
 
