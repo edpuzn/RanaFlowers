@@ -275,7 +275,7 @@ html { scrollbar-gutter: stable; }
   gap: 16px;
   align-items: start;
 }
-.footer-col { background:#fff; border:1px solid #eee; border-radius:14px; padding:14px; }
+.footer-col { background:#fff; border:1px solid #eee; border-radius:14px; padding:14px; text-align:left; }
 .footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; justify-content:space-between; }
 .footer-title .chev { transition: transform .25s ease, box-shadow .25s ease; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#fff; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
 .footer-acc[open] .chev { transform: rotate(180deg); }
@@ -301,6 +301,7 @@ html { scrollbar-gutter: stable; }
   .footer-acc { display:block; }
   .footer-acc > summary { pointer-events:none; }
   .footer-title .chev { display:none; }
+  .footer-title { justify-content: flex-start; }
   .footer-col { text-align: left; }
   .footer-col .footer-title,
   .footer-col ul,
