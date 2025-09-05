@@ -52,7 +52,7 @@
     <div class="row align-items-center g-3">
       <div class="col-md-6">
         <div class="ratio ratio-4x3 rounded-4 overflow-hidden bg-dark">
-          <transition name="slide-right" mode="out-in">
+          <transition name="slide-right">
             <div class="hero-img" :key="currentImage" :style="{ backgroundImage: `url(${currentImage})` }"></div>
           </transition>
         </div>
@@ -172,7 +172,8 @@ export default defineComponent({
 .headline-fade-enter-from, .headline-fade-leave-to { opacity: 0; }
 
 .hero-img { position:absolute; inset:0; background: center/cover no-repeat; }
-.slide-right-enter-active, .slide-right-leave-active { transition: transform .6s cubic-bezier(.22,.61,.36,1), opacity .6s ease; }
-.slide-right-enter-from { transform: translateX(12px); opacity: 0; }
-.slide-right-leave-to { transform: translateX(-12px); opacity: 0; }
+.slide-right-enter-active, .slide-right-leave-active { transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s ease; position: absolute; inset: 0; }
+.slide-right-enter-from { transform: translateX(24px); opacity: 0; }
+.slide-right-leave-to { transform: translateX(-24px); opacity: 0; }
+.ratio .hero-img { position:absolute; inset:0; }
 </style>
