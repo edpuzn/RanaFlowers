@@ -7,7 +7,7 @@
 
     <ul class="nav nav-pills justify-content-center flex-wrap gap-2 mb-3">
       <li class="nav-item" v-for="c in categories" :key="c.id">
-        <button class="nav-link" :class="{ active: c.id === selectedId }" @click="selectedId = c.id">{{ c.name }}</button>
+        <router-link class="nav-link" :class="{ active: c.id === selectedId }" :to="{ path: '/urunler', query: { cat: c.id } }">{{ c.name }}</router-link>
       </li>
     </ul>
 
