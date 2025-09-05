@@ -277,10 +277,11 @@ html { scrollbar-gutter: stable; }
 }
 .footer-col { background:#fff; border:1px solid #eee; border-radius:14px; padding:14px; }
 .footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; justify-content:space-between; }
-.footer-title .chev { transition: transform .25s ease; }
+.footer-title .chev { transition: transform .25s ease, box-shadow .25s ease; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#fff; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
 .footer-acc[open] .chev { transform: rotate(180deg); }
-.footer-body { animation: accOpen .25s ease; }
-@keyframes accOpen { from { opacity: 0; transform: translateY(-4px);} to { opacity: 1; transform: translateY(0);} }
+.footer-body { overflow: hidden; }
+.footer-acc[open] .footer-body { animation: slideOpen .28s cubic-bezier(.22,.61,.36,1); }
+@keyframes slideOpen { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 .footer-phone { display:inline-block; font-weight:800; font-size:20px; color:#111; text-decoration:none; }
 .footer-item { display:flex; gap:8px; color:#555; margin-top:8px; }
 .footer-social { display:flex; gap:16px; margin-top:10px; justify-content:center; }
@@ -298,6 +299,7 @@ html { scrollbar-gutter: stable; }
   .footer-acc[open] > summary { margin-bottom:8px; }
   .footer-acc { display:block; }
   .footer-acc > summary { pointer-events:none; }
+  .footer-title .chev { display:none; }
 }
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
 .pay { width:110px; height:48px; border:1px solid #ddd; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#fff; }
