@@ -83,97 +83,97 @@ export default defineComponent({
       {
         id: 'guller',
         name: 'Güller',
-        cover: '/gul.jpeg',
+        cover: '/gul.webp',
         items: [
-          '/guller/1.jpg',
-          '/guller/2.jpg',
-          '/guller/3.jpg',
-          '/guller/4.jpg',
-          '/guller/2.jpg'
+          '/guller/1.webp',
+          '/guller/2.webp',
+          '/guller/3.webp',
+          '/guller/4.webp',
+          '/guller/2.webp'
         ]
       },
       {
         id: 'orkideler',
         name: 'Orkideler',
-        cover: '/orkide.jpg',
+        cover: '/orkide.webp',
         items: [
-          '/orkideler/1.JPG',
-          '/orkideler/2.JPG',
-          '/orkideler/3.JPG',
-          '/orkideler/4.JPG',
-          '/orkideler/5.JPG',
+          '/orkideler/1.webp',
+          '/orkideler/2.webp',
+          '/orkideler/3.webp',
+          '/orkideler/4.webp',
+          '/orkideler/5.webp',
         ]
       },
       {
         id: 'saksi',
         name: 'Saksı Çiçekleri',
-        cover: '/saksicicekleri.jpg',
+        cover: '/saksicicekleri.webp',
         items: [
-          '/saksiCicekleri/1.JPG',
-          '/saksiCicekleri/2.JPG',
-          '/saksiCicekleri/3.JPG',
-          '/saksiCicekleri/4.JPG',
-          '/saksiCicekleri/5.JPG',
+          '/saksiCicekleri/1.webp',
+          '/saksiCicekleri/2.webp',
+          '/saksiCicekleri/3.webp',
+          '/saksiCicekleri/4.webp',
+          '/saksiCicekleri/5.webp',
         ]
       },
       {
         id: 'acilis',
         name: 'Açılış Çiçekleri',
-        cover: '/aciliscicekleri.jpg',
+        cover: '/aciliscicekleri.webp',
         items: [
-          '/acilisCicekleri/IMG_4365.JPG',
-          '/acilisCicekleri/IMG_4366.JPG',
-          '/acilisCicekleri/IMG_4369.JPG',
-          '/acilisCicekleri/IMG_4370.JPG',
-          '/acilisCicekleri/IMG_4371.JPG',
+          '/acilisCicekleri/IMG_4365.webp',
+          '/acilisCicekleri/IMG_4366.webp',
+          '/acilisCicekleri/IMG_4369.webp',
+          '/acilisCicekleri/IMG_4370.webp',
+          '/acilisCicekleri/IMG_4371.webp',
         ]
       },
       {
         id: 'celenk',
         name: 'Çelenkler',
-        cover: '/celenk.jpg',
+        cover: '/celenk.webp',
         items: [
-          '/celenkler/1.JPG',
-          '/celenkler/2.JPG',
-          '/celenkler/3.JPG',
-          '/celenkler/4.JPG',
-          '/celenkler/5.JPG',
+          '/celenkler/1.webp',
+          '/celenkler/2.webp',
+          '/celenkler/3.webp',
+          '/celenkler/4.webp',
+          '/celenkler/5.webp',
         ]
       },
       {
         id: 'buketler',
         name: 'Buketler',
-        cover: '/buket.jpg',
+        cover: '/buket.webp',
         items: [
-          '/buketler/1.jpeg',
-          '/buketler/2.jpeg',
-          '/buketler/3.jpeg',
-          '/buketler/4.jpeg',
-          '/buketler/5.jpeg',
+          '/buketler/1.webp',
+          '/buketler/2.webp',
+          '/buketler/3.webp',
+          '/buketler/4.webp',
+          '/buketler/5.webp',
         ]
       },
       {
         id: 'lux',
         name: 'Lüks Buketler',
-        cover: '/luxBuketler/1.jpeg',
+        cover: '/luxBuketler/1.webp',
         items: [
-          '/luxBuketler/1.jpeg',
-          '/luxBuketler/2.jpeg',
-          '/luxBuketler/3.jpeg',
-          '/luxBuketler/4.jpeg',
-          '/luxBuketler/5.jpeg',
+          '/luxBuketler/1.webp',
+          '/luxBuketler/2.webp',
+          '/luxBuketler/3.webp',
+          '/luxBuketler/4.webp',
+          '/luxBuketler/5.webp',
         ]
       },
       {
         id: 'papatyalar',
         name: 'Papatyalar',
-        cover: '/papatya.jpg',
+        cover: '/papatya.webp',
         items: [
-          '/papatyalar/1.JPG',
-          '/papatyalar/2.JPG',
-          '/papatyalar/3.JPG',
-          '/papatyalar/1.JPG',
-          '/papatyalar/2.JPG',
+          '/papatyalar/1.webp',
+          '/papatyalar/2.webp',
+          '/papatyalar/3.webp',
+          '/papatyalar/1.webp',
+          '/papatyalar/2.webp',
         ]
       },
       {
@@ -181,11 +181,11 @@ export default defineComponent({
         name: 'Çikolatalar',
         cover: '/cikolata.jpg',
         items: [
-          '/Cikolatalar/1.jpeg',
-          '/Cikolatalar/2.jpeg',
-          '/Cikolatalar/3.jpeg',
-          '/Cikolatalar/4.jpeg',
-          '/Cikolatalar/5.jpeg',
+          '/Cikolatalar/1.webp',
+          '/Cikolatalar/2.webp',
+          '/Cikolatalar/3.webp',
+          '/Cikolatalar/4.webp',
+          '/Cikolatalar/5.webp',
         ]
       },
     ])
