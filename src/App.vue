@@ -140,6 +140,7 @@ export default defineComponent({
 </script>
 
 <style>
+html, body { margin: 0; padding: 0; }
 #app { height: 100%; }
 /* Splash kapanış animasyonu: yukarı doğru çekilerek dairesel daralma */
 .sweep-leave-active { transition: clip-path .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
