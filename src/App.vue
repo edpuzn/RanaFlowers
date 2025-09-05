@@ -15,6 +15,15 @@
     </div>
   </transition>
   <div id="layout">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a class="tb-phone" href="tel:+905536026121"><i class="bi bi-telephone"></i> 0553 602 61 21</a>
+        <div class="tb-social">
+          <a href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://instagram.com/ranaflowers21" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
     <header class="navbar" style="--brand:#222; --primary:#222; --soft:#f6efe9; --accent:#e7f0ec; --muted:#666; --white:#fff;">
       <div class="brand">
         <div class="logo-circle">RF</div>
@@ -148,6 +157,24 @@ export default defineComponent({
   color: #2b2b2b;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
+.topbar {
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+}
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tb-phone { color:#fff; text-decoration:none; display:flex; align-items:center; gap:6px; font-weight:700; }
+.tb-social { display:flex; gap:10px; }
+.tb-social a { color:#fff; opacity:.85; }
+.tb-social a:hover { opacity:1; }
 
 .navbar {
   display: flex;
