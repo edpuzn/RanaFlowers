@@ -36,6 +36,8 @@
       </article>
     </div>
 
+
+    
     <div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content bg-dark border-0">
@@ -88,8 +90,7 @@ export default defineComponent({
           '/guller/1.webp',
           '/guller/2.webp',
           '/guller/3.webp',
-          '/guller/4.webp',
-          '/guller/2.webp'
+          '/guller/4.webp'
         ]
       },
       {
@@ -114,6 +115,11 @@ export default defineComponent({
           '/saksiCicekleri/3.webp',
           '/saksiCicekleri/4.webp',
           '/saksiCicekleri/5.webp',
+          '/saksiCicekleri/6.webp',
+          '/saksiCicekleri/7.webp',
+          '/saksiCicekleri/8.webp',
+          '/saksiCicekleri/9.webp',
+          '/saksiCicekleri/10.webp'
         ]
       },
       {
@@ -126,6 +132,7 @@ export default defineComponent({
           '/acilisCicekleri/IMG_4369.webp',
           '/acilisCicekleri/IMG_4370.webp',
           '/acilisCicekleri/IMG_4371.webp',
+          '/acilisCicekleri/IMG_4372.webp'
         ]
       },
       {
@@ -138,6 +145,8 @@ export default defineComponent({
           '/celenkler/3.webp',
           '/celenkler/4.webp',
           '/celenkler/5.webp',
+          '/celenkler/6.webp',
+          '/celenkler/7.webp'
         ]
       },
       {
@@ -150,6 +159,7 @@ export default defineComponent({
           '/buketler/3.webp',
           '/buketler/4.webp',
           '/buketler/5.webp',
+          '/buketler/6.webp'
         ]
       },
       {
@@ -162,6 +172,20 @@ export default defineComponent({
           '/luxBuketler/3.webp',
           '/luxBuketler/4.webp',
           '/luxBuketler/5.webp',
+          '/luxBuketler/6.webp',
+          '/luxBuketler/7.webp',
+          '/luxBuketler/8.webp',
+          '/luxBuketler/9.webp',
+          '/luxBuketler/10.webp',
+          '/luxBuketler/11.webp',
+          '/luxBuketler/12.webp',
+          '/luxBuketler/13.webp',
+          '/luxBuketler/14.webp',
+          '/luxBuketler/15.webp',
+          '/luxBuketler/16.webp',
+          '/luxBuketler/17.webp',
+          '/luxBuketler/18.webp',
+          '/luxBuketler/19.webp'
         ]
       },
       {
@@ -171,9 +195,7 @@ export default defineComponent({
         items: [
           '/papatyalar/1.webp',
           '/papatyalar/2.webp',
-          '/papatyalar/3.webp',
-          '/papatyalar/1.webp',
-          '/papatyalar/2.webp',
+          '/papatyalar/3.webp'
         ]
       },
       {
@@ -186,6 +208,10 @@ export default defineComponent({
           '/Cikolatalar/3.webp',
           '/Cikolatalar/4.webp',
           '/Cikolatalar/5.webp',
+          '/Cikolatalar/6.webp',
+          '/Cikolatalar/7.webp',
+          '/Cikolatalar/8.webp',
+          '/Cikolatalar/9.webp'
         ]
       },
     ])
