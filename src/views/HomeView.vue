@@ -21,27 +21,27 @@
 
   <section class="container pb-4">
     <div class="row g-3">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+      <div class="col-4 col-md-4">
+        <div class="card h-100 shadow-sm feature-card">
           <div class="card-body text-center">
             <h3 class="h5">Taze & Günlük</h3>
-            <p class="text-secondary mb-0">Her gün taze gelen çiçeklerle hazırlanan özenli aranjmanlar.</p>
+            <p class="text-secondary mb-0 d-none d-md-block">Her gün taze gelen çiçeklerle hazırlanan özenli aranjmanlar.</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+      <div class="col-4 col-md-4">
+        <div class="card h-100 shadow-sm feature-card">
           <div class="card-body text-center">
             <h3 class="h5">Butik Tasarım</h3>
-            <p class="text-secondary mb-0">Her zevke uygun minimal ve şık tasarımlar.</p>
+            <p class="text-secondary mb-0 d-none d-md-block">Her zevke uygun minimal ve şık tasarımlar.</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+      <div class="col-4 col-md-4">
+        <div class="card h-100 shadow-sm feature-card">
           <div class="card-body text-center">
             <h3 class="h5">Hızlı Teslimat</h3>
-            <p class="text-secondary mb-0">Şehir içi aynı gün teslimat seçenekleri.</p>
+            <p class="text-secondary mb-0 d-none d-md-block">Şehir içi aynı gün teslimat seçenekleri.</p>
           </div>
         </div>
       </div>
@@ -175,4 +175,8 @@ export default defineComponent({
 .slide-right-enter-from { transform: translateX(24px); opacity: 0; }
 .slide-right-leave-to { transform: translateX(-24px); opacity: 0; }
 .ratio .hero-img { position:absolute; inset:0; }
+
+/* Özellik kartları - hover efekti */
+.feature-card { transition: transform .25s ease, box-shadow .25s ease; border:1px solid #eee; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
 </style>
