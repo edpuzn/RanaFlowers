@@ -83,7 +83,7 @@ export default defineComponent({
       {
         id: 'guller',
         name: 'Güller',
-        cover: 'https://images.unsplash.com/photo-1514514805403-b9439be04b20?q=80&w=1600&auto=format&fit=crop',
+        cover: '/gul.jpeg',
         items: [
           '/guller/1.jpg',
           '/guller/2.jpg',
