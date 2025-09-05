@@ -111,7 +111,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
 
 export default defineComponent({
   name: 'AppLayout',
@@ -119,6 +119,20 @@ export default defineComponent({
     const showSplash = ref(true)
     onMounted(() => {
       setTimeout(() => { showSplash.value = false }, 1800)
+      // Footer accordion: desktopta açık, mobilde kapalı
+      const setFooterAccordionState = () => {
+        const isDesktop = window.matchMedia('(min-width: 992px)').matches
+        document.querySelectorAll<HTMLDetailsElement>('.footer-acc').forEach(el => {
+          el.open = isDesktop
+        })
+      }
+      setFooterAccordionState()
+      window.addEventListener('resize', setFooterAccordionState)
+      ;(window as any).__footerSync = setFooterAccordionState
+    })
+    onBeforeUnmount(() => {
+      const sync = (window as any).__footerSync as (() => void) | undefined
+      if (sync) window.removeEventListener('resize', sync)
     })
     return { showSplash }
   }
