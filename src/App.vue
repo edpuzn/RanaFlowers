@@ -26,13 +26,13 @@
     </div>
     <header class="navbar" style="--brand:#222; --primary:#222; --soft:#f6efe9; --accent:#e7f0ec; --muted:#666; --white:#fff;">
       <div class="navbar-inner">
-        <div class="brand">
+        <router-link to="/" class="brand brand-link">
           <div class="logo-circle">RF</div>
           <div class="brand-text">
             <span class="brand-title">RANA</span>
             <span class="brand-sub">FLOWERS</span>
           </div>
-        </div>
+        </router-link>
         <nav class="menu">
           <router-link to="/">Anasayfa</router-link>
           <router-link to="/urunler">Ürünler</router-link>
@@ -223,6 +223,7 @@ html, body { margin: 0; padding: 0; }
   align-items: center;
   gap: 12px;
 }
+.brand-link { text-decoration:none; color:inherit; margin-left: 6px; }
 
 .logo-circle {
   width: 36px;
