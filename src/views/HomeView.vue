@@ -158,12 +158,12 @@ export default defineComponent({
   content: "";
   position: absolute;
   top: 50%;
-  width: 14%;
+  width: 12%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #999, transparent);
 }
-.fancy-title::before { left: -2%; }
-.fancy-title::after { right: -2%; }
+.fancy-title::before { left: -6%; }
+.fancy-title::after { right: -6%; }
 
 .subtitle { margin-top: 6px; font-style: italic; color: #6c757d; }
 
