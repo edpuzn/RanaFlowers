@@ -25,18 +25,20 @@
       </div>
     </div>
     <header class="navbar" style="--brand:#222; --primary:#222; --soft:#f6efe9; --accent:#e7f0ec; --muted:#666; --white:#fff;">
-      <div class="brand">
-        <div class="logo-circle">RF</div>
-        <div class="brand-text">
-          <span class="brand-title">RANA</span>
-          <span class="brand-sub">FLOWERS</span>
+      <div class="navbar-inner">
+        <div class="brand">
+          <div class="logo-circle">RF</div>
+          <div class="brand-text">
+            <span class="brand-title">RANA</span>
+            <span class="brand-sub">FLOWERS</span>
+          </div>
         </div>
+        <nav class="menu">
+          <router-link to="/">Anasayfa</router-link>
+          <router-link to="/urunler">Ürünler</router-link>
+          <router-link to="/iletisim">İletişim</router-link>
+        </nav>
       </div>
-      <nav class="menu">
-        <router-link to="/">Anasayfa</router-link>
-        <router-link to="/urunler">Ürünler</router-link>
-        <router-link to="/iletisim">İletişim</router-link>
-      </nav>
     </header>
 
     <main class="content">
@@ -63,9 +65,14 @@
         <div class="footer-col">
           <div class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</div>
           <ul>
-            <li><router-link to="/urunler">Buketler</router-link></li>
+            <li><router-link to="/urunler">Güller</router-link></li>
             <li><router-link to="/urunler">Orkideler</router-link></li>
-            <li><router-link to="/urunler">Hediyelikler</router-link></li>
+            <li><router-link to="/urunler">Saksı Çiçekleri</router-link></li>
+            <li><router-link to="/urunler">Açılış Çiçekleri</router-link></li>
+            <li><router-link to="/urunler">Çelenkler</router-link></li>
+            <li><router-link to="/urunler">Buketler</router-link></li>
+            <li><router-link to="/urunler">Papatyalar</router-link></li>
+            <li><router-link to="/urunler">Çikolatalar</router-link></li>
           </ul>
         </div>
 
@@ -88,7 +95,7 @@
               <img src="/brands/mastercard.svg" alt="Mastercard" />
             </span>
             <span class="pay" aria-label="TROY logo">
-              <img src="/brands/troy.svg" alt="Troy" />
+              <img src="/brands/troy.png" alt="Troy" />
             </span>
           </div>
         </div>
@@ -190,6 +197,8 @@ export default defineComponent({
   height: 64px;
 }
 
+.navbar-inner { max-width: 1200px; margin: 0 auto; width: 100%; display:flex; align-items:center; justify-content:space-between; }
+
 .brand {
   display: flex;
   align-items: center;
@@ -250,14 +259,14 @@ html { scrollbar-gutter: stable both-edges; }
 .footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; }
 .footer-phone { display:inline-block; font-weight:800; font-size:20px; color:#111; text-decoration:none; }
 .footer-item { display:flex; gap:8px; color:#555; margin-top:8px; }
-.footer-social { display:flex; gap:12px; margin-top:10px; }
-.footer-social a { width:38px; height:38px; border:1px solid #bbb; border-radius:10px; background:#fff; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
-.footer-social a:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,.08); }
+.footer-social { display:flex; gap:16px; margin-top:10px; justify-content:center; }
+.footer-social a { color:#111; font-size:22px; line-height:1; }
+.footer-social a:hover { transform: translateY(-1px); }
 .footer-col ul { list-style:none; padding-left:0; margin:0; }
 .footer-col li { margin:6px 0; }
 .footer-col a { text-decoration:none; color:#333; }
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
-.pay { width:92px; height:40px; border:1px solid #ddd; border-radius:8px; display:flex; align-items:center; justify-content:center; background:#fff; }
-.pay img { max-width:72px; max-height:24px; }
+.pay { width:110px; height:48px; border:1px solid #ddd; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#fff; }
+.pay img { max-width:88px; max-height:28px; }
 .footer-bottom { text-align:center; color:#666; margin-top:12px; font-size:12px; }
 </style>
