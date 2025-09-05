@@ -97,11 +97,11 @@ export default defineComponent({
         name: 'Orkideler',
         cover: '/orkide.jpg',
         items: [
-          'https://images.unsplash.com/photo-1542259009477-98a5a5a3327b?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd2?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1491069755253-1be3c2aaa9e7?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1442458017215-285b83f65851?q=80&w=1000&auto=format&fit=crop',
+          '/orkideler/1.JPG',
+          '/orkideler/2.JPG',
+          '/orkideler/3.JPG',
+          '/orkideler/4.JPG',
+          '/orkideler/5.JPG',
         ]
       },
       {
