@@ -294,13 +294,19 @@ html { scrollbar-gutter: stable; }
 .footer-cats .more { margin-top:8px; font-weight:700; }
 .footer-acc > summary { list-style:none; cursor:pointer; }
 .footer-acc[open] > summary { margin-bottom:8px; }
-@media (min-width: 720px) {
+/* Masaüstünde sola hizalama */
+@media (min-width: 992px) {
   .footer-acc > summary { cursor: default; }
   .footer-acc[open] > summary { margin-bottom:8px; }
   .footer-acc { display:block; }
   .footer-acc > summary { pointer-events:none; }
   .footer-title .chev { display:none; }
   .footer-col { text-align: left; }
+  .footer-col .footer-title,
+  .footer-col ul,
+  .footer-col li,
+  .footer-col .footer-phone,
+  .footer-col .footer-item { text-align: left; }
   .footer-social { justify-content: flex-start; }
 }
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
