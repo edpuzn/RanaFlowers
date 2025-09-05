@@ -4,8 +4,8 @@
     <div class="row align-items-center justify-content-center text-center">
       <div class="col-lg-10">
         <div class="brand-badge letter-space-2 mb-2">RANA FLOWERS</div>
-        <h1 class="display-4 fw-bold italic fade-slide playfair fancy-title">
-          <transition name="headline-swipe" mode="out-in">
+        <h1 class="display-4 fw-bold italic playfair fancy-title">
+          <transition name="headline-fade" mode="out-in">
             <span :key="headline">{{ headline }}</span>
           </transition>
         </h1>
@@ -52,7 +52,7 @@
     <div class="row align-items-center g-3">
       <div class="col-md-6">
         <div class="ratio ratio-4x3 rounded-4 overflow-hidden bg-dark">
-          <transition name="fade-img" mode="out-in">
+          <transition name="slide-right" mode="out-in">
             <div class="hero-img" :key="currentImage" :style="{ backgroundImage: `url(${currentImage})` }"></div>
           </transition>
         </div>
@@ -89,24 +89,9 @@ export default defineComponent({
 
     // Tüm ürün görselleri (karışık)
     const allImages = ref<string[]>([
-      // Güller
-      '/guller/1.webp','/guller/2.webp','/guller/3.webp','/guller/4.webp',
-      // Orkideler
-      '/orkideler/1.webp','/orkideler/2.webp','/orkideler/3.webp','/orkideler/4.webp','/orkideler/5.webp',
-      // Saksı Çiçekleri
-      '/saksiCicekleri/1.webp','/saksiCicekleri/2.webp','/saksiCicekleri/3.webp','/saksiCicekleri/4.webp','/saksiCicekleri/5.webp','/saksiCicekleri/6.webp','/saksiCicekleri/7.webp','/saksiCicekleri/8.webp','/saksiCicekleri/9.webp','/saksiCicekleri/10.webp',
-      // Açılış Çiçekleri
-      '/acilisCicekleri/IMG_4365.webp','/acilisCicekleri/IMG_4366.webp','/acilisCicekleri/IMG_4369.webp','/acilisCicekleri/IMG_4370.webp','/acilisCicekleri/IMG_4371.webp','/acilisCicekleri/IMG_4372.webp',
-      // Çelenkler
-      '/celenkler/1.webp','/celenkler/2.webp','/celenkler/3.webp','/celenkler/4.webp','/celenkler/5.webp','/celenkler/6.webp','/celenkler/7.webp',
-      // Buketler
-      '/buketler/1.webp','/buketler/2.webp','/buketler/3.webp','/buketler/4.webp','/buketler/5.webp','/buketler/6.webp',
-      // Lüks Buketler
+      // Sadece Lüks Buketler ve Papatyalar
       '/luxBuketler/1.webp','/luxBuketler/2.webp','/luxBuketler/3.webp','/luxBuketler/4.webp','/luxBuketler/5.webp','/luxBuketler/6.webp','/luxBuketler/7.webp','/luxBuketler/8.webp','/luxBuketler/9.webp','/luxBuketler/10.webp','/luxBuketler/11.webp','/luxBuketler/12.webp','/luxBuketler/13.webp','/luxBuketler/14.webp','/luxBuketler/15.webp','/luxBuketler/16.webp','/luxBuketler/17.webp','/luxBuketler/18.webp','/luxBuketler/19.webp',
-      // Papatyalar
-      '/papatyalar/1.webp','/papatyalar/2.webp','/papatyalar/3.webp',
-      // Çikolatalar
-      '/Cikolatalar/1.webp','/Cikolatalar/2.webp','/Cikolatalar/3.webp','/Cikolatalar/4.webp','/Cikolatalar/5.webp','/Cikolatalar/6.webp','/Cikolatalar/7.webp','/Cikolatalar/8.webp','/Cikolatalar/9.webp'
+      '/papatyalar/1.webp','/papatyalar/2.webp','/papatyalar/3.webp'
     ])
 
     // Basit karıştırma
@@ -183,21 +168,11 @@ export default defineComponent({
 .subtitle { margin-top: 6px; font-style: italic; color: #6c757d; }
 
 /* Headline rotating transition (no opacity) */
-.headline-swipe-enter-active, .headline-swipe-leave-active {
-  transition: transform .5s cubic-bezier(.22,.61,.36,1), clip-path .5s cubic-bezier(.22,.61,.36,1);
-  will-change: transform, clip-path;
-  display: inline-block;
-}
-.headline-swipe-enter-from {
-  transform: translateY(14px) scale(.98) skewY(2deg);
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-}
-.headline-swipe-leave-to {
-  transform: translateY(-14px) scale(.98) skewY(-2deg);
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-}
+.headline-fade-enter-active, .headline-fade-leave-active { transition: opacity .5s ease; }
+.headline-fade-enter-from, .headline-fade-leave-to { opacity: 0; }
 
 .hero-img { position:absolute; inset:0; background: center/cover no-repeat; }
-.fade-img-enter-active, .fade-img-leave-active { transition: opacity .6s ease; }
-.fade-img-enter-from, .fade-img-leave-to { opacity: 0; }
+.slide-right-enter-active, .slide-right-leave-active { transition: transform .6s cubic-bezier(.22,.61,.36,1), opacity .6s ease; }
+.slide-right-enter-from { transform: translateX(12px); opacity: 0; }
+.slide-right-leave-to { transform: translateX(-12px); opacity: 0; }
 </style>
