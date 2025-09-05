@@ -23,7 +23,7 @@
 
           <div class="mt-3">
             <button class="btn btn-link p-0 hours-toggle" data-bs-toggle="collapse" data-bs-target="#hours" aria-expanded="false" aria-controls="hours">
-              <i class="bi bi-clock"></i> Çalışma Saatleri (Gün Gün)
+              <i class="bi bi-clock"></i> Çalışma Saatleri 
             </button>
             <div id="hours" class="collapse">
               <ul class="hours-list small mb-0">

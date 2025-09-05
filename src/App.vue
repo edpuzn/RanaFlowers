@@ -49,52 +49,60 @@
 
     <footer class="footer">
       <div class="footer-wrap">
-        <div class="footer-col">
-          <div class="footer-title"><i class="bi bi-headset"></i> Çağrı Merkezi</div>
-          <a class="footer-phone" href="tel:+905536026121">0553 602 61 21</a>
-          <div class="footer-item">
-            <i class="bi bi-geo-alt"></i>
-            <span>Fırat Mah. Fırat Blv. No:43 A, Kayapınar / Diyarbakır</span>
+        <details class="footer-col footer-acc">
+          <summary class="footer-title"><i class="bi bi-headset"></i> Çağrı Merkezi</summary>
+          <div class="footer-body">
+            <a class="footer-phone" href="tel:+905536026121">0553 602 61 21</a>
+            <div class="footer-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>Fırat Mah. Fırat Blv. No:43 A, Kayapınar / Diyarbakır</span>
+            </div>
+            <div class="footer-social">
+              <a class="whatsapp" href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              <a class="instagram" href="https://instagram.com/ranaflowers21" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
           </div>
-          <div class="footer-social">
-            <a class="whatsapp" href="https://wa.me/905536026121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            <a class="instagram" href="https://instagram.com/ranaflowers21" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </details>
+
+        <details class="footer-col footer-acc">
+          <summary class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</summary>
+          <div class="footer-body">
+            <ul class="footer-cats">
+              <li><router-link :to="{ path: '/urunler', query: { cat: 'lux' } }">Lüks Buketler</router-link></li>
+              <li><router-link :to="{ path: '/urunler', query: { cat: 'papatyalar' } }">Papatyalar</router-link></li>
+              <li><router-link :to="{ path: '/urunler', query: { cat: 'cikolatalar' } }">Çikolatalar</router-link></li>
+              <li class="more"><router-link to="/urunler">Daha fazlasını görüntüle</router-link></li>
+            </ul>
           </div>
-        </div>
+        </details>
 
-        <div class="footer-col">
-          <div class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</div>
-          <ul class="footer-cats">
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'lux' } }">Lüks Buketler</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'papatyalar' } }">Papatyalar</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'cikolatalar' } }">Çikolatalar</router-link></li>
-            <li class="more"><router-link to="/urunler">Daha fazlasını görüntüle</router-link></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-title"><i class="bi bi-info-circle"></i> Bilgilendirme</div>
-          <ul>
-            <li><router-link to="/iletisim">İletişim</router-link></li>
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#">Kullanım Koşulları</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-title"><i class="bi bi-credit-card"></i> Ödeme</div>
-          <div class="cards">
-            <span class="pay" aria-label="VISA logo">
-              <img src="/brands/visa.svg" alt="Visa" />
-            </span>
-            <span class="pay" aria-label="Mastercard logo">
-              <img src="/brands/mastercard.svg" alt="Mastercard" />
-            </span>
-            <span class="pay" aria-label="TROY logo">
-              <img src="/brands/troy.png" alt="Troy" />
-            </span>
+        <details class="footer-col footer-acc">
+          <summary class="footer-title"><i class="bi bi-info-circle"></i> Bilgilendirme</summary>
+          <div class="footer-body">
+            <ul>
+              <li><router-link to="/iletisim">İletişim</router-link></li>
+              <li><a href="#">Hakkımızda</a></li>
+              <li><a href="#">Kullanım Koşulları</a></li>
+            </ul>
           </div>
-        </div>
+        </details>
+
+        <details class="footer-col footer-acc">
+          <summary class="footer-title"><i class="bi bi-credit-card"></i> Ödeme</summary>
+          <div class="footer-body">
+            <div class="cards">
+              <span class="pay" aria-label="VISA logo">
+                <img src="/brands/visa.svg" alt="Visa" />
+              </span>
+              <span class="pay" aria-label="Mastercard logo">
+                <img src="/brands/mastercard.svg" alt="Mastercard" />
+              </span>
+              <span class="pay" aria-label="TROY logo">
+                <img src="/brands/troy.png" alt="Troy" />
+              </span>
+            </div>
+          </div>
+        </details>
       </div>
       <div class="footer-bottom">© {{ new Date().getFullYear() }} Rana Flowers • Diyarbakır</div>
     </footer>
@@ -263,6 +271,14 @@ html { scrollbar-gutter: stable both-edges; }
 .footer-col a { text-decoration:none; color:#333; }
 .footer-cats { font-size: 14px; }
 .footer-cats .more { margin-top:8px; font-weight:700; }
+.footer-acc > summary { list-style:none; cursor:pointer; }
+.footer-acc[open] > summary { margin-bottom:8px; }
+@media (min-width: 720px) {
+  .footer-acc > summary { cursor: default; }
+  .footer-acc[open] > summary { margin-bottom:8px; }
+  .footer-acc { display:block; }
+  .footer-acc > summary { pointer-events:none; }
+}
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
 .pay { width:110px; height:48px; border:1px solid #ddd; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#fff; }
 .pay img { max-width:88px; max-height:28px; }
