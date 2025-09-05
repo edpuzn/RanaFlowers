@@ -50,7 +50,7 @@
     <footer class="footer">
       <div class="footer-wrap">
         <details class="footer-col footer-acc">
-          <summary class="footer-title"><i class="bi bi-headset"></i> Çağrı Merkezi</summary>
+          <summary class="footer-title"><i class="bi bi-headset"></i> Çağrı Merkezi <i class="bi bi-chevron-down chev"></i></summary>
           <div class="footer-body">
             <a class="footer-phone" href="tel:+905536026121">0553 602 61 21</a>
             <div class="footer-item">
@@ -65,7 +65,7 @@
         </details>
 
         <details class="footer-col footer-acc">
-          <summary class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</summary>
+          <summary class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler <i class="bi bi-chevron-down chev"></i></summary>
           <div class="footer-body">
             <ul class="footer-cats">
               <li><router-link :to="{ path: '/urunler', query: { cat: 'lux' } }">Lüks Buketler</router-link></li>
@@ -77,7 +77,7 @@
         </details>
 
         <details class="footer-col footer-acc">
-          <summary class="footer-title"><i class="bi bi-info-circle"></i> Bilgilendirme</summary>
+          <summary class="footer-title"><i class="bi bi-info-circle"></i> Bilgilendirme <i class="bi bi-chevron-down chev"></i></summary>
           <div class="footer-body">
             <ul>
               <li><router-link to="/iletisim">İletişim</router-link></li>
@@ -88,7 +88,7 @@
         </details>
 
         <details class="footer-col footer-acc">
-          <summary class="footer-title"><i class="bi bi-credit-card"></i> Ödeme</summary>
+          <summary class="footer-title"><i class="bi bi-credit-card"></i> Ödeme <i class="bi bi-chevron-down chev"></i></summary>
           <div class="footer-body">
             <div class="cards">
               <span class="pay" aria-label="VISA logo">
@@ -276,7 +276,11 @@ html { scrollbar-gutter: stable; }
   align-items: start;
 }
 .footer-col { background:#fff; border:1px solid #eee; border-radius:14px; padding:14px; }
-.footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.footer-title { font-weight:800; display:flex; align-items:center; gap:8px; margin-bottom:8px; justify-content:space-between; }
+.footer-title .chev { transition: transform .25s ease; }
+.footer-acc[open] .chev { transform: rotate(180deg); }
+.footer-body { animation: accOpen .25s ease; }
+@keyframes accOpen { from { opacity: 0; transform: translateY(-4px);} to { opacity: 1; transform: translateY(0);} }
 .footer-phone { display:inline-block; font-weight:800; font-size:20px; color:#111; text-decoration:none; }
 .footer-item { display:flex; gap:8px; color:#555; margin-top:8px; }
 .footer-social { display:flex; gap:16px; margin-top:10px; justify-content:center; }
