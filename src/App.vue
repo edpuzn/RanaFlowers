@@ -65,11 +65,9 @@
         <div class="footer-col">
           <div class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</div>
           <ul class="footer-cats">
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'guller' } }">Güller</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'orkideler' } }">Orkideler</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'saksi' } }">Saksı Çiçekleri</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'acilis' } }">Açılış Çiçekleri</router-link></li>
-            <li><router-link :to="{ path: '/urunler', query: { cat: 'celenk' } }">Çelenkler</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'lux' } }">Lüks Buketler</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'papatyalar' } }">Papatyalar</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'cikolatalar' } }">Çikolatalar</router-link></li>
             <li class="more"><router-link to="/urunler">Daha fazlasını görüntüle</router-link></li>
           </ul>
         </div>
