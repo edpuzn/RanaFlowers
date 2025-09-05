@@ -258,8 +258,8 @@ html, body { margin: 0; padding: 0; }
 .view-slide-zoom-enter-from { transform: translateY(18px) scale(.98); }
 .view-slide-zoom-leave-to { transform: translateY(-18px) scale(.98); }
 
-/* Prevent layout shift due to scrollbar */
-html { scrollbar-gutter: stable both-edges; }
+/* Scrollbar boşluğu sadece sağda kalsın (solda boşluk olmasın) */
+html { scrollbar-gutter: stable; }
 
 .footer {
   padding: 32px 24px 16px;
