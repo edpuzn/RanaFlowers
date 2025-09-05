@@ -95,7 +95,7 @@ export default defineComponent({
       {
         id: 'orkideler',
         name: 'Orkideler',
-        cover: 'https://images.unsplash.com/photo-1542259009477-98a5a5a3327b?q=80&w=1200&auto=format&fit=crop',
+        cover: '/orkide.jpg',
         items: [
           'https://images.unsplash.com/photo-1542259009477-98a5a5a3327b?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd2?q=80&w=1000&auto=format&fit=crop',
@@ -107,7 +107,7 @@ export default defineComponent({
       {
         id: 'saksi',
         name: 'Saksı Çiçekleri',
-        cover: 'https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=1600&auto=format&fit=crop',
+        cover: '/saksicicekleri.jpg',
         items: [
           'https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1446071103084-c257b5f70672?q=80&w=1000&auto=format&fit=crop',
@@ -119,7 +119,7 @@ export default defineComponent({
       {
         id: 'acilis',
         name: 'Açılış Çiçekleri',
-        cover: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop',
+        cover: '/aciliscicekleri.jpg',
         items: [
           'https://images.unsplash.com/photo-1576085898323-218337e3e43c?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop',
@@ -131,7 +131,7 @@ export default defineComponent({
       {
         id: 'celenk',
         name: 'Çelenkler',
-        cover: 'https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1200&auto=format&fit=crop',
+        cover: '/celenk.jpg',
         items: [
           'https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1589927986089-35812388d1f4?q=80&w=1000&auto=format&fit=crop',
@@ -143,7 +143,7 @@ export default defineComponent({
       {
         id: 'buketler',
         name: 'Buketler',
-        cover: 'https://images.unsplash.com/photo-1470137430626-983a37b8ea46?q=80&w=1200&auto=format&fit=crop',
+        cover: '/buket.jpg',
         items: [
           'https://images.unsplash.com/photo-1470137430626-983a37b8ea46?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop',
@@ -155,7 +155,7 @@ export default defineComponent({
       {
         id: 'papatyalar',
         name: 'Papatyalar',
-        cover: 'https://images.unsplash.com/photo-1436891620584-47fd0e565afb?q=80&w=1200&auto=format&fit=crop',
+        cover: '/papatya.jpg',
         items: [
           'https://images.unsplash.com/photo-1436891620584-47fd0e565afb?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=1000&auto=format&fit=crop',
@@ -167,7 +167,7 @@ export default defineComponent({
       {
         id: 'cikolatalar',
         name: 'Çikolatalar',
-        cover: 'https://images.unsplash.com/photo-1454678904372-2c7b04a237f1?q=80&w=1200&auto=format&fit=crop',
+        cover: '/cikolata.jpg',
         items: [
           'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=1000&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1511381939415-c1c76e2290c3?q=80&w=1000&auto=format&fit=crop',
