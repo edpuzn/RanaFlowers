@@ -300,6 +300,8 @@ html { scrollbar-gutter: stable; }
   .footer-acc { display:block; }
   .footer-acc > summary { pointer-events:none; }
   .footer-title .chev { display:none; }
+  .footer-col { text-align: left; }
+  .footer-social { justify-content: flex-start; }
 }
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
 .pay { width:110px; height:48px; border:1px solid #ddd; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#fff; }
