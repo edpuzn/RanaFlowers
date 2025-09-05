@@ -89,9 +89,8 @@ export default defineComponent({
 
     // Tüm ürün görselleri (karışık)
     const allImages = ref<string[]>([
-      // Sadece Lüks Buketler ve Papatyalar
-      '/luxBuketler/1.webp','/luxBuketler/2.webp','/luxBuketler/3.webp','/luxBuketler/4.webp','/luxBuketler/5.webp','/luxBuketler/6.webp','/luxBuketler/7.webp','/luxBuketler/8.webp','/luxBuketler/9.webp','/luxBuketler/10.webp','/luxBuketler/11.webp','/luxBuketler/12.webp','/luxBuketler/13.webp','/luxBuketler/14.webp','/luxBuketler/15.webp','/luxBuketler/16.webp','/luxBuketler/17.webp','/luxBuketler/18.webp','/luxBuketler/19.webp',
-      '/papatyalar/1.webp','/papatyalar/2.webp','/papatyalar/3.webp'
+      // Sadece Lüks Buketler
+      '/luxBuketler/1.webp','/luxBuketler/2.webp','/luxBuketler/3.webp','/luxBuketler/4.webp','/luxBuketler/5.webp','/luxBuketler/6.webp','/luxBuketler/7.webp','/luxBuketler/8.webp','/luxBuketler/9.webp','/luxBuketler/10.webp','/luxBuketler/11.webp','/luxBuketler/12.webp','/luxBuketler/13.webp','/luxBuketler/14.webp','/luxBuketler/15.webp','/luxBuketler/16.webp','/luxBuketler/17.webp','/luxBuketler/18.webp','/luxBuketler/19.webp'
     ])
 
     // Basit karıştırma
