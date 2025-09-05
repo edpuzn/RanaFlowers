@@ -11,7 +11,10 @@
       </li>
     </ul>
 
-    <div v-if="current" class="banner mb-3 rounded-3" :style="{ backgroundImage: `url(${current.cover})` }">
+    <div v-if="current" class="banner mb-3 rounded-3">
+      <transition name="banner-swipe" mode="out-in">
+        <div :key="bannerImage" class="banner-bg" :style="{ backgroundImage: `url(${bannerImage})` }"></div>
+      </transition>
       <img v-if="bannerLeft" :src="bannerLeft" alt="" class="banner-fig left" />
       <img v-if="bannerRight" :src="bannerRight" alt="" class="banner-fig right" />
       <div class="banner-overlay">
@@ -24,14 +27,9 @@
       <article v-for="(img,idx) in (current?.items || [])" :key="idx" class="col-6 col-md-4 col-lg-3">
         <div class="card h-100 shadow-sm">
           <a href="#" class="preview" data-bs-toggle="modal" data-bs-target="#imgModal" @click.prevent="openPreview(idx)">
-            <div class="ratio ratio-4x3" :style="{ background: `url(${img}) center/cover no-repeat` }"></div>
+            <div class="ratio ratio-9x16" :style="{ background: `url(${img}) center/cover no-repeat` }"></div>
+            <div class="img-label">{{ current?.name }}</div>
           </a>
-          <div class="card-body py-2">
-            <div class="card-meta">
-              <span class="pill">{{ current?.name }}</span>
-              <span class="muted">Örnek {{ idx + 1 }}</span>
-            </div>
-          </div>
         </div>
       </article>
     </div>
@@ -42,11 +40,11 @@
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content bg-dark border-0">
           <button type="button" class="btn-close btn-close-white ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div id="galleryCarousel" class="carousel slide" data-bs-interval="false">
+          <div id="galleryCarousel" class="carousel slide" data-bs-interval="false" ref="carouselRef">
             <div class="carousel-inner">
               <div v-for="(img, i) in (current?.items || [])" :key="i" class="carousel-item" :class="{ active: i === selectedIndex }">
                 <div class="zoom-wrap">
-                  <img :src="img" class="d-block w-100 rounded-3" alt="Görsel" />
+                  <img :src="img" class="modal-photo d-block rounded-3" alt="Görsel" />
                 </div>
               </div>
             </div>
@@ -69,7 +67,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 
 interface Category {
   id: string;
@@ -220,37 +218,84 @@ export default defineComponent({
     const current = computed(() => categories.value.find(c => c.id === selectedId.value))
     const bannerLeft = computed(() => current.value ? current.value.items[0] : '')
     const bannerRight = computed(() => current.value ? current.value.items[1] : '')
+    const bannerIndex = ref<number>(0)
+    const bannerImage = ref<string>('')
+    let bannerTimer: number | undefined
+    const resetBanner = () => {
+      bannerIndex.value = 0
+      bannerImage.value = current.value?.items[bannerIndex.value] || current.value?.cover || ''
+      if (bannerTimer) window.clearInterval(bannerTimer)
+      bannerTimer = window.setInterval(() => {
+        const list = current.value?.items || []
+        if (list.length === 0) return
+        bannerIndex.value = (bannerIndex.value + 1) % list.length
+        bannerImage.value = list[bannerIndex.value]
+      }, 5000)
+    }
+    watchEffect(() => { if (current.value) resetBanner() })
+    onMounted(() => resetBanner())
+    onBeforeUnmount(() => { if (bannerTimer) window.clearInterval(bannerTimer) })
 
     const selectedIndex = ref<number>(0)
+    const carouselRef = ref<HTMLElement | null>(null)
     const selectedImage = ref<string>('')
     const openPreview = (idx: number) => {
       selectedIndex.value = idx
       selectedImage.value = current.value?.items[idx] || ''
     }
-    return { categories, selectedId, current, selectedImage, selectedIndex, openPreview, bannerLeft, bannerRight }
+    const syncIndexFromDom = () => {
+      const root = carouselRef.value
+      if (!root) return
+      const items = Array.from(root.querySelectorAll('.carousel-item'))
+      const activeIndex = items.findIndex(el => el.classList.contains('active'))
+      if (activeIndex >= 0) selectedIndex.value = activeIndex
+    }
+
+    let onSlid: ((e: Event) => void) | null = null
+    onMounted(() => {
+      const root = carouselRef.value
+      if (!root) return
+      const handler = () => syncIndexFromDom()
+      onSlid = handler
+      root.addEventListener('slid.bs.carousel', handler)
+    })
+    onBeforeUnmount(() => {
+      const root = carouselRef.value
+      if (root && onSlid) root.removeEventListener('slid.bs.carousel', onSlid)
+    })
+
+    return { categories, selectedId, current, selectedImage, selectedIndex, openPreview, bannerLeft, bannerRight, bannerImage, carouselRef }
   }
 })
 </script>
 
 <style scoped>
-.ratio { border-top-left-radius: .5rem; border-top-right-radius: .5rem; background-position: 50% 35% !important; }
-.banner { height: 240px; background: #eee center/cover no-repeat; background-position: 50% 35%; position: relative; overflow: hidden; }
+.ratio { border-top-left-radius: .5rem; border-top-right-radius: .5rem; background-position: 50% 50% !important; }
+.banner { height: 240px; position: relative; overflow: hidden; border-radius: 16px; }
+.banner-bg { position:absolute; inset:0; background: #eee center/cover no-repeat; background-position: 50% 50%; }
 .banner::after { content:""; position:absolute; inset:0; background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.05)); }
 .banner-overlay { position:absolute; left:16px; bottom:12px; color:#fff; z-index:1; }
 .banner-fig { position:absolute; top:50%; transform: translateY(-50%) rotate(-4deg); width: 150px; height: 110px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.2); border: 2px solid rgba(255,255,255,.7); }
 .banner-fig.right { right: 12px; transform: translateY(-50%) rotate(6deg); }
 .banner-fig.left { left: 12px; }
+.banner-swipe-enter-active, .banner-swipe-leave-active { transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+.banner-swipe-enter-from { transform: translateX(100%); }
+.banner-swipe-leave-to { transform: translateX(-100%); }
 .nav-pills .nav-link { border:1px solid #111; color:#111; background:#fff; }
 .nav-pills .nav-link.active { background:#111; color:#fff; }
 .preview { display:block; }
 .preview .ratio { transition: transform .25s ease; }
 .preview:hover .ratio { transform: scale(1.02); }
+.img-label { position:absolute; left:10px; bottom:8px; color:#fff; font-weight:800; font-size:12px; letter-spacing:.5px; text-shadow:0 2px 8px rgba(0,0,0,.6), 0 1px 2px rgba(0,0,0,.5); padding:2px 6px; border-radius:8px; }
 .modal-content { border-radius: 16px; overflow: hidden; }
-.zoom-wrap { overflow: hidden; }
-.zoom-wrap img { transition: transform .35s ease; }
-.zoom-wrap img:hover { transform: scale(1.03); }
-.card-meta { display:flex; align-items:center; justify-content:space-between; }
-.pill { border:1px solid #111; border-radius:999px; padding:2px 8px; font-size:12px; font-weight:700; letter-spacing:.3px; }
+.zoom-wrap { overflow: hidden; display: grid; place-items: center; background: #000; min-height: 60vh; }
+.zoom-wrap img { transition: transform .25s ease; }
+.zoom-wrap img:hover { transform: scale(1.01); }
+.modal-photo { width: auto !important; max-width: 100%; height: auto; max-height: calc(100vh - 220px); object-fit: contain; }
+.caption { background: rgba(0,0,0,.55); border-top: 1px solid rgba(255,255,255,.08); font-weight: 600; letter-spacing: .3px; }
+.ratio-9x16 { --bs-aspect-ratio: calc(4 / 3 * 100%); }
+.card-meta { display:none; }
+.pill { display:none; }
 .muted { color:#6c757d; font-size:12px; }
 </style>
 
