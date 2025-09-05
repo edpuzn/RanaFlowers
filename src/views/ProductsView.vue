@@ -68,6 +68,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, watchEffect, onMounted, onBeforeUnmount } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 interface Category {
   id: string;
@@ -79,6 +80,8 @@ interface Category {
 export default defineComponent({
   name: 'ProductsView',
   setup() {
+    const route = useRoute()
+    const router = useRouter()
     const categories = ref<Category[]>([
       {
         id: 'guller',
@@ -214,7 +217,7 @@ export default defineComponent({
       },
     ])
 
-    const selectedId = ref<string>('guller')
+    const selectedId = ref<string>((route.query.cat as string) || 'guller')
     const current = computed(() => categories.value.find(c => c.id === selectedId.value))
     const bannerLeft = computed(() => current.value ? current.value.items[0] : '')
     const bannerRight = computed(() => current.value ? current.value.items[1] : '')
@@ -233,6 +236,15 @@ export default defineComponent({
       }, 5000)
     }
     watchEffect(() => { if (current.value) resetBanner() })
+    // URL query -> state sync
+    watchEffect(() => {
+      const q = (route.query.cat as string) || ''
+      if (q && q !== selectedId.value) selectedId.value = q
+    })
+    // state -> URL query sync on change (without navigation)
+    watchEffect(() => {
+      router.replace({ query: { ...route.query, cat: selectedId.value } })
+    })
     onMounted(() => resetBanner())
     onBeforeUnmount(() => { if (bannerTimer) window.clearInterval(bannerTimer) })
 

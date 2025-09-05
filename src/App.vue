@@ -64,15 +64,13 @@
 
         <div class="footer-col">
           <div class="footer-title"><i class="bi bi-list-ul"></i> Kategoriler</div>
-          <ul>
-            <li><router-link to="/urunler">Güller</router-link></li>
-            <li><router-link to="/urunler">Orkideler</router-link></li>
-            <li><router-link to="/urunler">Saksı Çiçekleri</router-link></li>
-            <li><router-link to="/urunler">Açılış Çiçekleri</router-link></li>
-            <li><router-link to="/urunler">Çelenkler</router-link></li>
-            <li><router-link to="/urunler">Buketler</router-link></li>
-            <li><router-link to="/urunler">Papatyalar</router-link></li>
-            <li><router-link to="/urunler">Çikolatalar</router-link></li>
+          <ul class="footer-cats">
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'guller' } }">Güller</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'orkideler' } }">Orkideler</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'saksi' } }">Saksı Çiçekleri</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'acilis' } }">Açılış Çiçekleri</router-link></li>
+            <li><router-link :to="{ path: '/urunler', query: { cat: 'celenk' } }">Çelenkler</router-link></li>
+            <li class="more"><router-link to="/urunler">Daha fazlasını görüntüle</router-link></li>
           </ul>
         </div>
 
@@ -265,6 +263,8 @@ html { scrollbar-gutter: stable both-edges; }
 .footer-col ul { list-style:none; padding-left:0; margin:0; }
 .footer-col li { margin:6px 0; }
 .footer-col a { text-decoration:none; color:#333; }
+.footer-cats { font-size: 14px; }
+.footer-cats .more { margin-top:8px; font-weight:700; }
 .cards { display:flex; flex-wrap:wrap; gap:8px; }
 .pay { width:110px; height:48px; border:1px solid #ddd; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#fff; }
 .pay img { max-width:88px; max-height:28px; }
