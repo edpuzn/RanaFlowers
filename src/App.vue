@@ -3,7 +3,7 @@
     <div v-if="showSplash" class="splash">
       <div class="splash-inner">
         <div class="splash-mark">
-          <img class="splash-logo" src="/logo.png" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <img class="splash-logo" :src="logoUrl" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
           <div class="splash-ring" style="display:none">RF</div>
         </div>
         <div class="splash-brand">

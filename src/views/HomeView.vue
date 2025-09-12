@@ -3,7 +3,7 @@
   <section class="hero container py-5">
     <div class="row align-items-center justify-content-center text-center">
       <div class="col-lg-10">
-        <div class="brand-badge letter-space-2 mb-2">RANA FLOWERS</div>
+        <div class="brand-badge letter-space-2 mb-2">Diyarbakır Çiçek / Diyarbakır Çiçekçi</div>
         <h1 class="display-4 fw-bold italic playfair fancy-title">
           <transition name="headline-fade" mode="out-in">
             <span :key="headline">{{ headline }}</span>
