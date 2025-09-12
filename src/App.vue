@@ -3,7 +3,7 @@
     <div v-if="showSplash" class="splash">
       <div class="splash-inner">
         <div class="splash-mark">
-          <img class="splash-logo" :src="logoUrl" alt="Rana Flowers logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <img class="splash-logo" :src="logoUrl" alt="Diyarbakır Çiçek / Diyarbakır Çiçekçi logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
           <div class="splash-ring" style="display:none">RF</div>
         </div>
         <div class="splash-brand">
@@ -104,7 +104,7 @@
           </div>
         </details>
       </div>
-      <div class="footer-bottom">© {{ new Date().getFullYear() }} Rana Flowers • Diyarbakır</div>
+      <div class="footer-bottom">© {{ new Date().getFullYear() }} Diyarbakır Çiçek / Diyarbakır Çiçekçi • Diyarbakır</div>
     </footer>
   </div>
   

@@ -42,7 +42,7 @@
 
       <div class="col-lg-6">
         <div class="map-card h-100">
-          <iframe class="map-frame" title="Rana Flowers Harita" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          <iframe class="map-frame" title="Diyarbakır Çiçek / Diyarbakır Çiçekçi Harita" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.537622829015!2d40.1669807!3d37.9332758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40751f9e5e9132d3%3A0x42ac0fb6e74ff4d1!2sRana%20Flowers!5e0!3m2!1str!2str!4v1730380000000!5m2!1str!2str"></iframe>
         </div>
       </div>
